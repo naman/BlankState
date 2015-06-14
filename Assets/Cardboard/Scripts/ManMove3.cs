@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManMove1 : MonoBehaviour {
+public class ManMove3 : MonoBehaviour {
 
 	public Rigidbody man;
 	public Rigidbody man2;
