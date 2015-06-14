@@ -8,7 +8,7 @@ public class ManMove3 : MonoBehaviour {
 
 	void Update () {
 		CollisionDetection ();
-		man.transform.position += new Vector3(0.01f,0.0f,0.0f);
+	//	man.transform.position += new Vector3(0.01f,0.0f,0.0f);
 	}
 
 	void CollisionDetection(){
@@ -20,9 +20,9 @@ public class ManMove3 : MonoBehaviour {
 		float mag = dx.magnitude;
 		
 		Vector3 normal = dx/mag; //Normal Vector in the direction from man2 -> man1
-		Vector3 F = A * Vector3.Scale(new Vector3(Mathf.Pow (e,(mag / B)),0.0f, 0.0f), normal); //this is wrong, I want to do something like this F = sigma(A * exp(dx/B) * normal) 
+		Vector3 F = 80*A * Vector3.Scale(new Vector3(0.0f, 0.0f,Mathf.Pow (e,(mag / B))), normal); //this is wrong, I want to do something like this F = sigma(A * exp(dx/B) * normal) 
 		// 						Sum of all forces due to every person around. In this case, just on person.
-		print(F);
+		//print(F);
 		man.AddForce (F);
 
 		man2.AddForce (-1*F);
