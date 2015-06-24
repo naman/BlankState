@@ -11,6 +11,6 @@ public class MoveVR : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		VR.transform.position += new Vector3 (0.0f, 0.0f, 0.04f);
+		VR.transform.position += new Vector3 (0.0f, 0.0f, 0.06f);
 	}
 }
