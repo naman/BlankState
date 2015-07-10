@@ -6,16 +6,16 @@ using System.Collections;
 public class ManMove3 : MonoBehaviour {
 	
 	public Rigidbody another;
-	
+	public GameObject PersonGameObject;
 	void Start(){
 		
 		another = GetComponent<Rigidbody> ();
 	}
 	
 	void Update () {
-		Vector3 position = new Vector3 (0.01f, 0.0f, 0.0f);;
-		
-		another.position -= position;
+		Vector3 position = new Vector3 (0.0000000000001f, 0.0f, 0.0f);;
+		PersonGameObject.GetComponent<Animator> ().Play ("HumanoidWalk");
+		//another.position -= position;
 		
 	}
 	
