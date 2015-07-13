@@ -14,10 +14,10 @@ public class ManMove2 : MonoBehaviour {
 	}
 
 		void Update () {
-		Vector3 position = new Vector3 (0.00001f, 0.0f, 0.0f);;
+		Vector3 position = new Vector3 (0.01f, 0.0f, 0.0f);;
 		//trya.GetComponent<Animation>().Play("HumanoidWalk");
 		PersonGameObject.GetComponent<Animator> ().Play ("HumanoidWalk");
-	//	another.position += position;
+	another.position += position;
 	
 	}
 

@@ -21,9 +21,9 @@ public class ManMove5 : MonoBehaviour {
 		Vector3 Force = calculateSocialForce (); //returns a Vector3 with Force in Newton
 		
 		Vector3 dx = target.position - person.position; 
-		person.AddForce(-Force*0.00000000001f/M);
-		target.AddForce(Force*0.00000000001f/M);
-
+		person.AddForce(-Force*0.00000001f/M);
+		target.AddForce(Force*0.00000001f/M);
+		//print(Force*0.0000000001f/M);
 	}
 
 	Vector3 calculateSocialForce(){
