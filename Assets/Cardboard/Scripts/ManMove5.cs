@@ -2,31 +2,33 @@
 using System.Collections;
 
 public class ManMove5 : MonoBehaviour {
-	private Rigidbody person;
-	private Rigidbody  target;
-
+	private Rigidbody[] people;
+	private Rigidbody VR;
 	private int A = 2000;
 	private float B = 0.5f;
 	private Vector3 e = new Vector3 (2.71f, 2.71f, 2.71f);
 
 	void Start(){
-		person = GameObject.Find ("Cube").GetComponent<Rigidbody>();
-		target = GameObject.Find ("Another").GetComponent<Rigidbody>();
+		people = GameObject.Find ("People").GetComponentsInChildren<Rigidbody>();
+		VR = GameObject.Find ("VR").GetComponent<Rigidbody>();
 	}
 
 	//Called after every 0.02 seconds
 	void FixedUpdate(){
 		//float delta_time = Time.deltaTime;
-		float M = 60.0f; //kg
-		Vector3 Force = calculateSocialForce (); //returns a Vector3 with Force in Newton
+		foreach (Rigidbody p in people){
+
+			float M = 60.0f; //kg
+			Vector3 Force = calculateSocialForce (p,VR); //returns a Vector3 with Force in Newton
 		
-		Vector3 dx = target.position - person.position; 
-		person.AddForce(-Force*0.00000001f/M);
-		target.AddForce(Force*0.00000001f/M);
-		//print(Force*0.0000000001f/M);
+			Vector3 dx = p.position - VR.position; 
+			VR.AddForce(-Force*0.00000001f/M);
+			p.AddForce(Force*0.00000001f/M);
+			print(Force*0.00000001f/M);
+		}
 	}
 
-	Vector3 calculateSocialForce(){
+	Vector3 calculateSocialForce(Rigidbody target, Rigidbody person){
 		Vector3 dx = target.position - person.position; //Vector3 : distance b/w target and person
 		//normalisation (in the direction of target)
 		Vector3 initial_nij  = dx/dx.magnitude;
