@@ -3,31 +3,29 @@ using System.Collections;
 
 public class ManMove5 : MonoBehaviour {
 	private Rigidbody[] people;
-	private Rigidbody VR;
 	private int A = 2000;
 	private float B = 0.5f;
 	private Vector3 e = new Vector3 (2.71f, 2.71f, 2.71f);
-
+	private float M = 60.0f; //kg
 	void Start(){
 		people = GameObject.Find ("People").GetComponentsInChildren<Rigidbody>();
-		VR = GameObject.Find ("VR").GetComponent<Rigidbody>();
 	}
 
 	//Called after every 0.02 seconds
 	void FixedUpdate(){
 		//float delta_time = Time.deltaTime;
-		foreach (Rigidbody p in people){
-
-			float M = 60.0f; //kg
-			Vector3 Force = calculateSocialForce (p,VR); //returns a Vector3 with Force in Newton
-		
-			Vector3 dx = p.position - VR.position; 
-			VR.AddForce(-Force*0.00000001f/M);
-			p.AddForce(Force*0.00000001f/M);
-			print(Force*0.00000001f/M);
-		}
+/*		foreach (Rigidbody p1 in people) {
+			foreach (Rigidbody p2 in people) {
+				Vector3 Force = Vector3.zero;
+				//if (p1.GetInstanceID() != p2.GetInstanceID()) {
+					Force = calculateSocialForce (p2, p1); //returns a Vector3 with Force in some units
+					p1.AddForce (-Force * 0.00000001f / M);
+					p2.AddForce (Force * 0.00000001f / M);
+					print (Force * 0.00000001f / M);
+				//}
+			}
+		}*/
 	}
-
 	Vector3 calculateSocialForce(Rigidbody target, Rigidbody person){
 		Vector3 dx = target.position - person.position; //Vector3 : distance b/w target and person
 		//normalisation (in the direction of target)
