@@ -51,12 +51,19 @@ void Start() {
 			//print (e-s);
 			yield return new WaitForSeconds (e-s+0.07f);
 				string[] words = www.text.ToString ().Split (',');
+				
+				foreach(String x in words){
+					print (x);
+				} 
 				float vx;
 				float.TryParse (words [0], out vx);
 				float vz;
-				float.TryParse (words [0], out vz);
-				Vector3 speed = new Vector3 (-vx / 10, 0.0f, vz / 10); //fixing the axes (-x and -z)
-				print (speed);
+				float.TryParse (words [1], out vz);
+				Vector3 speed = new Vector3 (-vx, 0.0f, vz); //fixing the axes (-x and -z)
+				
+				if(speed!=Vector3.zero){
+			//		print(vx.ToString()+ ", " + "0"+", "+vz.ToString());
+				}
 				VR.position += speed;
 		//} catch (UnityException e) {
 		//		print (e.Source);

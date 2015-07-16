@@ -7,7 +7,7 @@ using System;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
-public class Overall : MonoBehaviour {
+public class FetchPositions : MonoBehaviour {
 	public ThirdPersonCharacter[] people;
 	private List<string[]> rowData = new List<string[]>();
 	
