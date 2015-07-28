@@ -7,7 +7,7 @@ public class SocialForce : MonoBehaviour {
 	private float B = 0.5f;
 	private float M = 60.0f; //kg
 	
-	
+
 	void Start(){
 		people = GameObject.Find ("People").GetComponentsInChildren<Rigidbody>();
 	}
@@ -18,10 +18,13 @@ public class SocialForce : MonoBehaviour {
 			Vector3 Force = Vector3.zero;
 
 			foreach (Rigidbody j in people) {
-				Force += calculateSocialForce (i,j) ; //returns a Vector3 with Force in some units
+				Force += calculateSocialForce (i, j); //returns a Vector3 with Force in some units
 			}
-			i.position += i.velocity * Time.deltaTime;
-			i.velocity += (Force) / M * Time.deltaTime;
+			if (i.name != "VRPerson") {
+				i.position += i.velocity * Time.deltaTime;
+				i.velocity += (Force) / M * Time.deltaTime;
+		//		print (Force/M);
+			}
 		}
 	}
 	
