@@ -34,6 +34,8 @@
 
 - (UnityView *)createUnityView;
 
+- (void)launchSettingsDialog;
+
 - (void)startSettingsDialog:(UIViewController *)dialog;
 
 - (void)stopSettingsDialog;

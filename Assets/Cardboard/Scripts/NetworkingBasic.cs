@@ -10,6 +10,7 @@ public string url = "http://192.168.51.150:8000/velocity.txt";
 
 	void Start() {
 	//	StartCoroutine (Fetch ());
+		Cardboard.SDK.Recenter ();
 		VR = GameObject.Find("VRPerson").GetComponent<Rigidbody>();
 	}
 	/*

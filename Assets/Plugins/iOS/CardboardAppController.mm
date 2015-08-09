@@ -13,13 +13,13 @@
 // limitations under the License.
 
 #import "CardboardAppController.h"
-#import "CardboardView.h"
 
 extern "C" {
 
 extern void readProfile();
 extern void syncProfile();
 
+extern void createSettingsButton(id app, UIView* view);
 extern UIViewController* createSettingsDialog(id app);
 extern UIViewController* createOnboardingDialog(id app);
 
@@ -35,7 +35,7 @@ bool isOpenGLAPI() {
 
 void launchSettingsDialog() {
   CardboardAppController* app = (CardboardAppController *)GetAppController();
-  [app startSettingsDialog:createSettingsDialog(app)];
+  [app launchSettingsDialog];
 }
 
 void launchOnboardingDialog() {
@@ -58,7 +58,13 @@ void endSettingsDialog() {
 }
 
 - (UnityView *)createUnityView {
-  return [[CardboardView alloc] initFromMainScreen];
+  UnityView* unity_view = [super createUnityView];
+  createSettingsButton(self, (UIView *)unity_view);
+  return unity_view;
+}
+
+- (void)launchSettingsDialog {
+  [self startSettingsDialog:createSettingsDialog(self)];
 }
 
 - (void)startSettingsDialog:(UIViewController*)dialog {
