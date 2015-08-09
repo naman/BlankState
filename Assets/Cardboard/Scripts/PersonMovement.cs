@@ -10,7 +10,8 @@ public class PersonMovement : MonoBehaviour {
 	}
 	
 	void Update () {
-		person.AddForce (person.transform.forward * 1000.0f);
+		//person.AddForce (person.transform.forward * 1000.0f);
+		person.position += new Vector3(0.01f, 0.0f, 0.0f);
 		PersonGameObject.GetComponent<Animator> ().Play ("HumanoidWalk");
 	}
 }

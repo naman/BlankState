@@ -9,7 +9,7 @@ public string url = "http://192.168.51.150:8000/velocity.txt";
 	private Rigidbody VR;
 
 	void Start() {
-		StartCoroutine (Fetch ());
+	//	StartCoroutine (Fetch ());
 		VR = GameObject.Find("VRPerson").GetComponent<Rigidbody>();
 	}
 	/*
