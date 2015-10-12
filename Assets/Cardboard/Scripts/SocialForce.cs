@@ -19,12 +19,17 @@ public class SocialForce : MonoBehaviour {
 
 			foreach (Rigidbody j in people) {
 				Force += calculateSocialForce (i, j); //returns a Vector3 with Force in some units
+			
+
 			}
-			if (i.name != "VRPerson") {
-				i.position += i.velocity * Time.deltaTime;
-				i.velocity += (Force) / M * Time.deltaTime;
-		//		print (Force/M);
+			if (i.name != "VRPerson" ) {
+				if(i.name != "Robot"){
+					i.position += i.velocity * Time.deltaTime;
+					i.velocity += (Force) / M * Time.deltaTime;
+				}
 			}
+
+
 		}
 	}
 	

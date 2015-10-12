@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 19c0260d2a8d2854a9d81335a8ac2f0f
+labels:
+- Billboard
+- Rustic
+- Sign
+- Advertisement
+- Signpost
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    4300000: billboard_prp_1
+    4300002: paper10_1
+    4300004: paper20_1
+    4300006: paper30_1
+    4300008: paper40_1
+    4300010: paper50_1
+    4300012: paper60_1
+    4300014: paper11_1
+    4300016: paper41_1
+    4300018: paper42_1
+    4300020: paper32_1
+    4300022: paper12_1
+    4300024: paper13_1
+    4300026: paper14_1
+    4300028: paper33_1
+    4300030: paper15_1
+    4300032: paper16_1
+    4300034: paper17_1
+    4300036: paper18_1
+    4300038: paper19_1
+    4300040: paper42_3
+    4300042: paper24_1
+    4300044: paper191_1
+    4300046: paper192_1
+    4300048: paper193_1
+    4300050: paper42_5
+    4300052: paper68_1
+    4300054: paper43_1
+    4300056: paper44_1
+    4300058: paper45_1
+    4300060: paper33_3
+    4300062: paper21_1
+    4300064: paper22_1
+    4300066: paper21_3
+    4300068: paper22_3
+    4300070: paper23_1
+    4300072: paper24_3
+    4300074: paper61_1
+    4300076: paper62_1
+    4300078: paper63_1
+    4300080: paper64_1
+    4300082: paper65_1
+    4300084: paper66_1
+    4300086: paper67_1
+    4300088: paper68_3
+    4300090: paper55_1
+    4300092: paper56_1
+    4300094: paper57_1
+    4300096: paper69_1
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
