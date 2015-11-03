@@ -3,38 +3,29 @@ using System.Collections;
 
 public class ArmMove : MonoBehaviour {
 
-	public Vector3 eulerAngleVelocity;
-	public Rigidbody leftHand; 
-//	public Rigidbody rightHand;
-//	public GameObject board;
+	public Vector3 eulerAngleVelocity;	
+	public Rigidbody rightHand;
+	public Rigidbody leftHand;
+
+	private GameObject board;
 	private GameObject fire;
-	
+
+	private Quaternion _lookRotation;
+	private Vector3 _direction;
+	private bool hit = false;
+	public float speed = 1.0f;
+
 	void Start(){ 
 		leftHand  =  GetComponent<Rigidbody>();
-
-//		rightHand = GetComponent<Rigidbody>();
-		fire = GameObject.Find ("Board");	
-//		board = GameObject.Find ("Board");
+		rightHand = GetComponent<Rigidbody>();	
+		fire = GameObject.Find ("Fire");	
+		board = GameObject.Find ("Board");
 	}
-
-	//public static float AngleDir(Vector2 A, Vector2 B){
-	//	return -A.x * B.y + A.y * B.x;
-	//}
 
 	void FixedUpdate(){
-//		if board is board left
-//			left Handheld rotate
-//		else right Handheld rotate
-			
-		//Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime * -1);
-		//	print (leftHand.rotation *  deltaRotation);
-		leftHand.transform.LookAt (fire.transform);
-		//if (AngleDir( robot, board)<0){
-		//	leftHand.MoveRotation (leftHand.rotation * deltaRotation );
-	//	}else{
-		//leftHand.MoveRotation (leftHand.rotation * deltaRotation );
-	//	}
-
+		float step = speed * Time.deltaTime;
+		_direction = (board.transform.position - leftHand.transform.position).normalized;
+		_lookRotation = Quaternion.LookRotation (_direction, Vector3.forward);
+		leftHand.transform.rotation = Quaternion.Slerp (leftHand.transform.rotation, _lookRotation, Time.deltaTime * speed);
 	}
-
 }

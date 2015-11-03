@@ -14,19 +14,19 @@ public class PersonMovement1 : MonoBehaviour {
 	void Update () {
 
 		if (hit) 
-			person.position += new Vector3 (-0.015f, 0.0f, 0.0f);
+			person.position += new Vector3 (-0.02f, 0.0f, 0.0f);
 		 else 
-			person.position += new Vector3(0.015f, 0.0f, 0.0f);		
+			person.position += new Vector3(0.02f, 0.0f, 0.0f);		
 		
 		if (PersonGameObject.name != "Robot") {
-			PersonGameObject.GetComponent<Animator> ().speed = 0.7f;
+			PersonGameObject.GetComponent<Animator> ().speed = 0.77f;
 			PersonGameObject.GetComponent<Animator> ().Play ("HumanoidWalk");
 		}
 	}
 
 	void OnTriggerEnter(Collider col){
 		if (col.tag == "wall"){
-			print("Collision with wall!");
+		//	print("Collision with wall!");
 			person.rotation =  Quaternion.Inverse(person.rotation);
 			if (hit)
 				hit = false;
