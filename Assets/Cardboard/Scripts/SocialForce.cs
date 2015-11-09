@@ -3,13 +3,34 @@ using System.Collections;
 
 public class SocialForce : MonoBehaviour {
 	private Rigidbody[] people;
+	private GameObject[] Gpeople;
 	private int A = 2000;
-	private float B = 0.5f;
-	private float M = 60.0f; //kg
-	
+	private float B = 0.7f;
+	private float M = 70.0f; //kg
+
+
+
 
 	void Start(){
 		people = GameObject.Find ("People").GetComponentsInChildren<Rigidbody>();
+		Gpeople = GameObject.Find ("People").GetComponentsInChildren<GameObject> ();
+
+	
+	}
+
+
+	IEnumerator DoSomething()
+	{
+	
+
+		yield return new WaitForSeconds(10);
+		//enable some more people
+
+		foreach (Rigidbody i in people) {
+			if(){}
+			
+		}
+		//DISABLE ALL
 	}
 	
 	//Called after every 0.02 seconds
@@ -22,15 +43,18 @@ public class SocialForce : MonoBehaviour {
 			
 
 			}
-			if (i.name != "VRPerson" ) {
-				if(i.name != "Robot"){
+			if (i.name != "VRPerson") {
+			//	if (i.name != "Robot") {
 					i.position += i.velocity * Time.deltaTime;
 					i.velocity += (Force) / M * Time.deltaTime;
-				}
+			//	}
 			}
 
 
 		}
+		
+		System.GC.Collect();
+		Resources.UnloadUnusedAssets();
 	}
 	
 	Vector3 calculateSocialForce(Rigidbody target, Rigidbody person){

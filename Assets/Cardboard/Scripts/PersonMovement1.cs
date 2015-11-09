@@ -14,9 +14,9 @@ public class PersonMovement1 : MonoBehaviour {
 	void Update () {
 
 		if (hit) 
-			person.position += new Vector3 (-0.02f, 0.0f, 0.0f);
+			person.position += new Vector3 (-0.1f, 0.0f, 0.0f);
 		 else 
-			person.position += new Vector3(0.02f, 0.0f, 0.0f);		
+			person.position += new Vector3(0.1f, 0.0f, 0.0f);		
 		
 		if (PersonGameObject.name != "Robot") {
 			PersonGameObject.GetComponent<Animator> ().speed = 0.77f;
