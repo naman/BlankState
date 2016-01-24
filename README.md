@@ -12,6 +12,8 @@ Installation Instructions:
 6. Find the relevant source code here https://github.com/naman/BlankState/tree/latest-new/Assets/Cardboard/Scripts.
 
 For Kinect Code:
+------------------
+
 1. Install Processing IDE v2.2.1 from here https://processing.org/download/?processing on Windows/Linux.
 2. After th setup, clone the repo.
 3. Extract the zip or tar.gz.
