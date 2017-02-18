@@ -1,6 +1,3 @@
-# BlankState
-Cardboard VR app using Unity implementing Social Force Model
-
 Installation Instructions:
 ----------------------------
 
